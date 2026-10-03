@@ -1,0 +1,933 @@
+```css
+/* =========================================
+   MMA FIGHT HUB
+   COMPLETE CSS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body.light-mode {
+    background: #f4f4f4;
+    color: #111111;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(8, 8, 8, 0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid #222;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo span {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: #e50914;
+}
+
+.logo small {
+    margin-top: 4px;
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: #999;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #aaa;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e50914;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-button,
+.menu-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #333;
+    background: #111;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.theme-button:hover,
+.menu-button:hover {
+    border-color: #e50914;
+    color: #e50914;
+}
+
+.menu-button {
+    display: none;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 150px 7% 80px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    background:
+        radial-gradient(circle at 80% 30%, rgba(229, 9, 20, 0.14), transparent 35%),
+        #080808;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.eyebrow {
+    color: #e50914;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 130px);
+    line-height: 0.9;
+    font-weight: 900;
+    letter-spacing: -5px;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.contact-box h2 span {
+    color: #e50914;
+}
+
+.hero-description {
+    max-width: 600px;
+    margin: 30px 0;
+    color: #999;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #e50914;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #ff1a25;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 1px solid #444;
+    color: white;
+}
+
+.btn-secondary:hover {
+    border-color: #e50914;
+    color: #e50914;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 45px;
+    margin-top: 55px;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stats strong {
+    font-size: 30px;
+}
+
+.hero-stats span {
+    color: #777;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   FIGHTER HERO CARD
+========================================= */
+
+.hero-visual {
+    display: flex;
+    justify-content: center;
+}
+
+.fighter-card {
+    width: min(100%, 420px);
+    background: #111;
+    border: 1px solid #292929;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.card-header,
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.card-header {
+    border-bottom: 1px solid #222;
+}
+
+.fighter-image-container {
+    height: 470px;
+    position: relative;
+    background:
+        linear-gradient(135deg, #222, #080808);
+    overflow: hidden;
+}
+
+.fighter-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.04);
+}
+
+.image-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 40%,
+        rgba(0, 0, 0, 0.9)
+    );
+}
+
+.fighter-info {
+    position: absolute;
+    left: 25px;
+    bottom: 55px;
+    z-index: 2;
+}
+
+.fighter-info p {
+    color: #e50914;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.fighter-info h2 {
+    font-size: 38px;
+    letter-spacing: -1px;
+}
+
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+.section {
+    padding: 120px 7%;
+}
+
+.dark-section {
+    background: #0d0d0d;
+}
+
+.section-heading {
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    font-size: clamp(42px, 6vw, 80px);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -3px;
+}
+
+
+/* =========================================
+   ABOUT
+========================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.about-content p {
+    color: #999;
+    max-width: 700px;
+    margin-bottom: 25px;
+}
+
+.about-content .large-text {
+    color: white;
+    font-size: 30px;
+    line-height: 1.3;
+}
+
+.mindset-card {
+    border: 1px solid #292929;
+    background: #111;
+}
+
+.mindset-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    border-bottom: 1px solid #292929;
+}
+
+.mindset-line:last-child {
+    border-bottom: none;
+}
+
+.mindset-line span {
+    color: #e50914;
+}
+
+.mindset-line strong {
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.skill-card {
+    min-height: 260px;
+    padding: 25px;
+    position: relative;
+    background: #111;
+    border: 1px solid #252525;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #e50914;
+    box-shadow: 0 15px 40px rgba(229, 9, 20, 0.08);
+}
+
+.skill-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #444;
+    font-size: 12px;
+}
+
+.skill-icon {
+    font-size: 38px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   FIGHTERS
+========================================= */
+
+.fighters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.fighter-profile {
+    position: relative;
+    padding: 30px 25px;
+    background: #111;
+    border: 1px solid #252525;
+    transition: 0.3s;
+}
+
+.fighter-profile:hover {
+    transform: translateY(-8px);
+    border-color: #e50914;
+}
+
+.fighter-rank {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    color: #555;
+    font-size: 12px;
+}
+
+.fighter-avatar {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e50914, #5b0005);
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.fighter-profile h3 {
+    font-size: 21px;
+    margin-bottom: 7px;
+}
+
+.fighter-profile p {
+    color: #777;
+    font-size: 12px;
+    min-height: 40px;
+}
+
+.fighter-style {
+    display: inline-block;
+    margin-top: 15px;
+    color: #e50914;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   CHAMPIONS
+========================================= */
+
+.champions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.champion-card {
+    padding: 40px 25px;
+    text-align: center;
+    background: #111;
+    border: 1px solid #292929;
+    transition: 0.3s;
+}
+
+.champion-card:hover {
+    border-color: #e50914;
+    transform: translateY(-7px);
+}
+
+.champion-icon {
+    font-size: 40px;
+}
+
+.champion-card h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.champion-card p {
+    margin: 7px 0;
+    color: #aaa;
+}
+
+.champion-card small {
+    color: #e50914;
+}
+
+
+/* =========================================
+   WEIGHT CLASSES
+========================================= */
+
+.weight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.weight-card {
+    padding: 30px;
+    background: #111;
+    border-left: 3px solid #e50914;
+    transition: 0.3s;
+}
+
+.weight-card:hover {
+    transform: translateX(6px);
+    background: #161616;
+}
+
+.weight-card span {
+    color: #e50914;
+    font-size: 11px;
+}
+
+.weight-card h3 {
+    margin: 15px 0 5px;
+}
+
+.weight-card p {
+    color: #777;
+}
+
+.note {
+    margin-top: 25px;
+    color: #666;
+    font-size: 12px;
+}
+
+
+/* =========================================
+   FIGHT HISTORY
+========================================= */
+
+.fight-list {
+    border-top: 1px solid #292929;
+}
+
+.fight-row {
+    min-height: 90px;
+    display: grid;
+    grid-template-columns: 60px 1fr 80px 1fr 100px;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #292929;
+    transition: 0.3s;
+}
+
+.fight-row:hover {
+    padding-left: 10px;
+    background: #111;
+}
+
+.fight-number {
+    color: #e50914;
+}
+
+.vs {
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.fight-status {
+    justify-self: end;
+    color: #e50914;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   GALLERY
+========================================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-box {
+    height: 260px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background:
+        linear-gradient(
+            135deg,
+            #222,
+            #080808
+        );
+    border: 1px solid #292929;
+    transition: 0.3s;
+}
+
+.gallery-box:hover {
+    transform: scale(1.02);
+    border-color: #e50914;
+}
+
+.gallery-box span {
+    color: #e50914;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.gallery-box strong {
+    font-size: 35px;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-section {
+    padding-bottom: 80px;
+}
+
+.contact-box {
+    padding: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: #111;
+    border: 1px solid #292929;
+}
+
+.contact-box h2 {
+    max-width: 700px;
+    font-size: clamp(40px, 6vw, 75px);
+    line-height: 0.95;
+}
+
+.contact-box p:not(.eyebrow) {
+    margin-top: 20px;
+    color: #777;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.socials a {
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    color: #e50914;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 50px 7%;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #555;
+}
+
+.footer-logo {
+    color: #e50914;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+footer p {
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.top-button {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #e50914;
+    background: #e50914;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 900;
+}
+
+.top-button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================
+   LIGHT MODE
+========================================= */
+
+body.light-mode .navbar {
+    background: rgba(244, 244, 244, 0.94);
+    border-color: #ddd;
+}
+
+body.light-mode .hero,
+body.light-mode {
+    background-color: #f4f4f4;
+}
+
+body.light-mode .hero-description,
+body.light-mode .about-content p {
+    color: #555;
+}
+
+body.light-mode .fighter-card,
+body.light-mode .skill-card,
+body.light-mode .fighter-profile,
+body.light-mode .champion-card,
+body.light-mode .weight-card,
+body.light-mode .gallery-box,
+body.light-mode .contact-box,
+body.light-mode .mindset-card {
+    background: #ffffff;
+    border-color: #ddd;
+}
+
+body.light-mode .dark-section {
+    background: #eaeaea;
+}
+
+body.light-mode .about-content .large-text {
+    color: #111;
+}
+
+body.light-mode .nav-links a {
+    color: #555;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        position: absolute;
+        top: 78px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        background: #0d0d0d;
+        border-bottom: 1px solid #222;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid,
+    .fighters-grid,
+    .champions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .weight-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .hero,
+    .section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero {
+        padding-top: 125px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+        letter-spacing: -3px;
+    }
+
+    .hero-stats {
+        gap: 25px;
+    }
+
+    .hero-stats strong {
+        font-size: 23px;
+    }
+
+    .fighter-image-container {
+        height: 380px;
+    }
+
+    .skills-grid,
+    .fighters-grid,
+    .champions-grid,
+    .weight-grid,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .fight-row {
+        grid-template-columns: 35px 1fr 45px 1fr;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .fight-status {
+        display: none;
+    }
+
+    .contact-box {
+        padding: 35px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+```
